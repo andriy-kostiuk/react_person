@@ -2,6 +2,7 @@ import './Person.scss';
 
 export const Person = ({ person }) => {
   const { name, sex, isMarried, partnerName, age } = person;
+  const personPartnerType = sex === 'f' ? 'husband' : 'wife';
 
   return (
     <section className="Person">
@@ -11,7 +12,7 @@ export const Person = ({ person }) => {
 
       {isMarried ? (
         <p className="Person__partner">
-          {partnerName} is my {sex === 'f' ? 'husband' : 'wife'}
+          {partnerName} is my {personPartnerType}
         </p>
       ) : (
         <p className="Person__partner">I am not married</p>
